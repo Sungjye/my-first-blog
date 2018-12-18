@@ -14,6 +14,8 @@
 		<h1><a href="">SJ's Test Blog</a></h1>
 	</div>
 
+
+<!--
 	<div>
 		<p>published: 12.12.2018, 16:07</p>
 		<h2><a href="">The first post</a></h2>
@@ -25,6 +27,21 @@
 		<h2><a href="">The second post</a></h2>
 		<p>But seek first his kingdom and his righteousness, and all these things will be given to you as well.</p>
 	</div>
+-->
+	<!--{{posts}} -->
+
+	{% for post in posts %}
+	<div>
+		<br>	
+		Published: {{post.published_date}} 
+		
+		<h2>{{post.title}}</h2> 
+		<p>
+		{{post.text}}	
+		</p>
+	</div>
+	{% endfor %}
+
 
 </body>
 </htlm>
