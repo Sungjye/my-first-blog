@@ -1,7 +1,16 @@
+{% load static %}
 <htlm>
 
 <head>
 	<title>SJ's first Web-svc pages : Test blog</title>
+
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+	<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
@@ -10,7 +19,7 @@
 	<p>Hi there! I'm SJ.</p> 
 	<p>It works from 12nd Dec. 2018 3:53PM.</p> 
 	-->
-	<div>
+	<div class="page-header">
 		<h1><a href="">SJ's Test Blog</a></h1>
 	</div>
 
@@ -30,8 +39,9 @@
 -->
 	<!--{{posts}} -->
 
+<!--
 	{% for post in posts %}
-	<div>
+	<div class="post">
 		<br>	
 		Published: {{post.published_date}} 
 		
@@ -41,6 +51,23 @@
 		</p>
 	</div>
 	{% endfor %}
+-->
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% for post in posts %}
+                <div class="post">
+                    <div class="date">
+                        <p>published: {{ post.published_date }}</p>
+                    </div>
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
 
 
 </body>
