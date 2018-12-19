@@ -35,9 +35,9 @@
 		<br>	
 		Published: {{post.published_date}} 
 		
-		<h2>{{post.title}}</h2> 
+		<h2><a href="">{{post.title}}</a></h2> 
 		<p>
-		{{post.text}}	
+		{{post.text|linebreaksbr}}	
 		</p>
 	</div>
 	{% endfor %}
